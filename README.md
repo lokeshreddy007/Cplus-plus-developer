@@ -387,4 +387,54 @@ int main() {
 
 #### Pointers ####
 
+`pointer is used to store the address of the varible`
+
+Variable --->  1. data variable
+               2. Address varibale
+
+Declaration     : int *p
+Initialization  : p
+Dereferencing   : cout<<*p
+
+Value    |  Address       
+---------|-------------|
+10       |  200/201    | 
+200      |  300/301    |
+
+```cpp
+
+ int x = 10  // data varibale
+ int *p      // Address varibale
+ p= &x;
+ 
+cout<<x;     // 10
+
+cout<<&x;    // 200
+
+cout<<p;     // 200
+
+cout<<&p;   // 300
+
+cout<<*p;   // 10
+
+```
+pointer Arithmetic
+
+```cpp
+int a[5] = {2,5,6,8,1};   // address start from 200
+int *p =a;
+int *q = &a[3]
+
+p++    //  202
+
+p--    // 198
+
+p+=2     // 200
+
+p=-2   // 300
+
+d =p-q  // 200 - 208
+
+```
+
 #### Functions ####
