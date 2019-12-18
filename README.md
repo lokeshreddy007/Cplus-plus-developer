@@ -249,7 +249,23 @@ using namespace std;
 int main() {
 
    for( int a = 10; a < 20; a = a + 1 ) {
-      cout << "value of a: " << a <<endl;
+      cout << "value of a is : " << a <<endl;
+   }
+    return 0;
+}
+
+```
+
+```cpp
+
+#include<iostream>
+using namespace std;
+
+int main() {
+
+    int a[5] = {1,2,3,4,5}
+   for( auto c: a) {
+      cout << "value of a is: " << c <<endl;
    }
     return 0;
 }
@@ -275,6 +291,8 @@ int main() {
 
 ```
 
+##### Nested loop #####
+
 ```cpp
 
 #include<iostream>
@@ -293,7 +311,79 @@ int main() {
 
 ```
 
-#### Arrays ####
+#### Arrays  ####
+
+`collection of items stored at contiguous memory locations`
+
+
+1. Linear Search
+
+A linear search scans one item at a time, without jumping to any item .
+
+The worst case `complexity is  O(n)`, sometimes known an O(n) search
+Time taken to search elements keep increasing as the number of elements are increased.
+
+2. Binary Search 
+
+`Condition`: To use this elemnt in the array must me sorted order
+A binary search however, cut down your search to half as soon as you find middle of a sorted list.
+
+The middle element is looked to check if it is greater than or less than the value to be searched.
+Accordingly, search is done to either half of the given list c`omplexity is  O(log n)`
+
+##### Linear Search Example #####
+
+```cpp
+#include<iostream>
+using namespace std;
+
+int main() {
+
+   int a[5] = {6,7,23,45,23};
+   int key;
+   cout<< "Enter the Key Search";
+   cin>>key;
+
+   for(int i=0;i<10;i++>) {
+       if(key == a[i]) {
+           cout<<"Elemnt found at "<<i;
+           exit(0);
+       }
+   }
+   cout<<"Key Elemnt not found";
+    return 0;
+}
+
+```
+
+##### Binary Search Example #####
+
+```cpp
+#include<iostream>
+using namespace std;
+
+int main() {
+
+   int a[5] = {6,7,23,45,23};
+   int l=0,h=4,key,mid;
+   cout<< "Enter the Key Search";
+   cin>>key;
+    while (l<=h) {
+        mid = (l+h)/2;
+        if (key == a[mid]) {
+            cout<<"Element found at "<<mid;
+            exit(0);
+        } else if (key < a[mid]) {
+            h = mid -1;
+        } else {
+            l = mid + 1;
+        }
+    }
+   cout<<"Key Elemnt not found";
+    return 0;
+}
+
+```
 
 #### Pointers ####
 
