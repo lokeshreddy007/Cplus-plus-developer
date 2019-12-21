@@ -501,21 +501,21 @@ int sum(int a,int b,int c) {
 }
 
 int main() {
-cout<<sum(10,5)<<endl;
-cout<<sum(12.5f,3.4f)<<endl;
-cout<<sum(10,20,3)<<endl;
-return 0;
+    cout<<sum(10,5)<<endl;
+    cout<<sum(12.5f,3.4f)<<endl;
+    cout<<sum(10,20,3)<<endl;
+    return 0;
 }
 
 ```
 
 ##### Function Template Example #####
 
-• Function template are used for defining generic functions
-• They work for multiple datatypes
-• Datatype is decided based on the type of value passed
-• Datatype is a template variable
-• Function can have multiple template variables
+1. Function template are used for defining generic functions
+2. They work for multiple datatypes
+3. Datatype is decided based on the type of value passed
+4. Datatype is a template variable
+5. Function can have multiple template variables
 
 ```cpp
 #include <iostream>
@@ -536,9 +536,9 @@ return 0;
 
 ##### Function Default Arguments #####
 
-• Parameters of a function can have default values
-• Default values to parameters must be given from right side parameter
-• Default values to parameters must be given from right side parameter
+1. Parameters of a function can have default values
+2. Default values to parameters must be given from right side parameter
+3. Default values to parameters must be given from right side parameter
 
 ```cpp
 
@@ -630,9 +630,9 @@ int main() {
 ```
 ###### Return by Address ######
 
-• A function can return address of memory
-• It should not return address of local variables, which will be disposed after function ends
-• It can return address of memory allocated in heap
+1. A function can return address of memory
+2. It should not return address of local variables, which will be disposed after function ends
+3. It can return address of memory allocated in heap
 
 ###### Return by Address Example ######
 
