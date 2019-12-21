@@ -325,11 +325,10 @@ Time taken to search elements keep increasing as the number of elements are incr
 
 2. Binary Search 
 
-`Condition`: To use this elemnt in the array must me sorted order
-A binary search however, cut down your search to half as soon as you find middle of a sorted list.
-
+`Condition`: To use Binary Search, the element in the array must me sorted order
+binary search cut down your search to half as soon as you find middle of a sorted list.
 The middle element is looked to check if it is greater than or less than the value to be searched.
-Accordingly, search is done to either half of the given list c`omplexity is  O(log n)`
+Accordingly, search is done to either half of the given list `complexity is  O(log n)`
 
 ##### Linear Search Example #####
 
@@ -436,5 +435,237 @@ p=-2   // 300
 d =p-q  // 200 - 208
 
 ```
+Problems while using Pointers
+
+1. Uninitialized Pointer
+2. Memory leak
+3. Dangling Pointer
+ 
+#### Reference Example ####
+
+```cpp
+#include<iostream>
+using namespace std;
+
+int main() {
+    int x=10;
+    int &y=x;
+
+    y++;
+    x++;
+    cout<<x<<endl; // 12
+    cout<<y<<endl; // 12  
+    return 0;
+} 
+
+```
+
+#### Pointer to Function Example ####
+
+```cpp
+#include<iostream>
+using namespace std;
+
+void display() { // function
+    cout<<"Hello";
+}
+int main() {
+
+    void (*fp)();  // declaration
+    fp=display;    // initializiton
+    (*fp)();       // calling function
+    return 0;
+}
+
+```
 
 #### Functions ####
+
+Function Overloading  means were we can write more than one function with same name but a different argument list
+
+##### Function Overloading Example #####
+
+```cpp
+#include<iostream>
+using namespace std;
+int sum(int a,int b) {
+    return a+b;
+}
+
+float sum(float a,float b) {
+    return a+b;
+}
+
+int sum(int a,int b,int c) {
+    return a,b,c;
+}
+
+int main() {
+cout<<sum(10,5)<<endl;
+cout<<sum(12.5f,3.4f)<<endl;
+cout<<sum(10,20,3)<<endl;
+return 0;
+}
+
+```
+
+##### Function Template Example #####
+
+• Function template are used for defining generic functions
+• They work for multiple datatypes
+• Datatype is decided based on the type of value passed
+• Datatype is a template variable
+• Function can have multiple template variables
+
+```cpp
+#include <iostream>
+using namespace std;
+template<class T>
+T maxim(T a,T b) {
+    return a>b?a:b;
+}
+
+int main() {
+cout<<maxim(12,14)<<endl;
+cout<<maxim(2.3,1.4)<<endl;
+cout<<maxim(2.3f,5.6f)<<endl;
+return 0;
+
+}
+```
+
+##### Function Default Arguments #####
+
+• Parameters of a function can have default values
+• Default values to parameters must be given from right side parameter
+• Default values to parameters must be given from right side parameter
+
+```cpp
+
+#include <iostream>
+using namespace std;
+int sum(int a,int b,int c=0) {
+    return a+b+c;
+}
+
+int main() {
+    cout<<sum(10,20,3)<<endl;
+    return 0;
+}
+
+```
+
+##### Parameter Passing Methods #####
+
+1. Pass by Value
+2. Pass by Address
+3. Pass by Refernce
+
+Pass-By-Value : values of Actual parameters are passed to formal parameters. Actual
+parameters cannot be modified by function
+
+###### Pass by Value Example ######
+
+```cpp
+
+void swap(int a, int b) {
+    int temp;
+    temp=a;
+    a=b;
+    b=temp;
+}
+
+int main() {
+    int x=10, y=20;
+    swap(x,y);
+    cout<<x<<y;
+    return 0;
+}
+
+```
+Pass-By-Address: Address of Actual Parameters are passed to a function, formal
+parameters must be pointers. Function can indirectly access actual parameters.
+
+###### Pass by Address Example ######
+
+```cpp
+
+void swap(int *x, int *y) {
+    int temp;
+    temp=*x;
+    *x=*y;
+    *y=temp;
+}
+
+int main() {
+    int a=10, b=20;
+    swap(&a,&b);
+    cout<<a<<b;
+    return 0;
+}
+
+```
+
+Pass-By-Reference: Actual parameters are passed as reference to formal parameters,
+function can modify actual parameters.
+
+###### Pass by Reference Example ######
+
+```cpp
+
+void swap(int &a, int &b) {
+    int temp;
+    temp=a;
+    a=b;
+    b=temp;
+}
+
+int main() {
+    int x=10, y=20;
+    swap(x,y);
+    cout<<x<<y;
+    return 0;
+}
+
+```
+###### Return by Address ######
+
+• A function can return address of memory
+• It should not return address of local variables, which will be disposed after function ends
+• It can return address of memory allocated in heap
+
+###### Return by Address Example ######
+
+```cpp
+int * fun(int n) {
+    int *p=new int[n];
+    for(int i=0;i<n;i++)
+    p[i]=i+1;
+    return p;
+}
+
+int main() {
+    int *ptr=fun(5);
+    for(int i=0;i<5;i++)
+    cout<<i<<endl;
+}
+
+```
+###### Return by Reference Example ######
+
+Return by Reference
+• A function cal return reference
+
+```cpp
+int & fun(int &a) {
+    cout<<a;
+    return a;
+}
+
+int main() {
+    int x=10;
+    fun(x)=25;
+    cout<<x;
+}
+
+```
