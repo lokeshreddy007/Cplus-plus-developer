@@ -653,9 +653,6 @@ int main() {
 ```
 ###### Return by Reference Example ######
 
-Return by Reference
-• A function cal return reference
-
 ```cpp
 int & fun(int &a) {
     cout<<a;
@@ -668,4 +665,120 @@ int main() {
     cout<<x;
 }
 
+```
+
+###### Oops ######
+
+Features of OOPS
+1. Abstraction
+2. Encapsulation
+3. Inheritance
+4. Polymorphism
+
+###### Classes ######
+
+Class is a blue print of an object.Many object can be created from same class.Object consumes memory equal to sum of sizes of all data members.Member functions don’t occupy memory. Dot operator is used for accessing members of object.Memory allocated for object is also called as instance.
+
+```cpp
+Class Rectangle {
+    public:
+        int length;
+        int breadth;
+        int area() {
+        return length*breadth;
+        }
+
+        int perimeter() {
+        return 2*(length+breadth);
+        }
+};
+```
+###### Pointer to an Object ######
+
+1. A pointer of type class can be created
+2. A pointer can point on existing object
+3. A new object can be created in heap using pointer
+4. Arrow operator is used for accessing members of an object using pointer
+
+Data Hiding
+1. Data members of a class class are usually declared as Private or Protected,
+2. They can be accessed only inside the class and child classes
+3. Data finding protects data from mishandling
+
+###### Constructors ######
+
+1. Constructor is a member function of a class
+2. It will have same name as class name
+3. It will not have return type
+4. Its should be public
+5. It can be declared as private also in some cases
+6. It is called when object is created
+7. It is used for initialising an object
+8. It can be overloaded
+9. If its not defined then class will have a default constructor
+10 .Constructor can take default arguments
+
+Types of constructors
+1. Non-argument constructor
+2. Parameterised constructor
+3. Copy constructor
+
+###### All types of Member Functions ######
+
+1. Constructors - called when object is created
+2. Accessors - used for knowing the value of data members
+3. Mutators - used for changing value of data member
+4. Facilitator - actual functions of class
+5. Enquiry - used for checking if an object satisfies some condition
+6. Destructor - used for releasing resources used by object
+
+###### Example ######
+
+```cpp
+#include<iostream>
+using namespace std;
+class Student {
+    private:
+    int roll;
+    string name;
+    int mathMarks;
+    int phyMarks;
+    int chemMarks;
+    public:
+    Student(int r,string n,int m,int p,int c) {
+        roll=r;
+        name=n;
+        mathMarks=m;
+        phyMarks=p;
+        chemMarks=c;
+    }
+
+    int total() {
+        return mathMarks+phyMarks+chemMarks;
+    }
+
+    char grade() {
+        float average=total()/3;
+        if(average > 60)
+        return 'A';
+        else if(average>=40 && average<60)
+        return 'B';
+        else
+        return 'C';
+    }
+};
+int main() {
+    int roll;
+    string name;
+    int m,p,c;
+    cout<<"Enter Roll number of a Student: ";
+    cin>>roll;
+    cout<<"Enter Name of a Student:";
+    cin>>name;
+    cout<<"Enter marks in 3 subjects";
+    cin>>m>>p>>c;
+    Student s(roll,name,m,p,c);
+    cout<<"Total Marks:"<<s.total()<<endl;
+    cout<<"Grade of Student:"<<s.grade()<<endl;
+}
 ```
