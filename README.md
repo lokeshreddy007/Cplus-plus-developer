@@ -822,7 +822,7 @@ int main() {
 
 ```
 
-##### Operator Overloading using Friend Functions #####
+##### Operator Overloading using Friend Functions Example #####
 ```cpp
 #include <iostream>
 using namespace std;
@@ -853,6 +853,62 @@ int main() {
     Complex c1(5,3),c2(10,5),c3;
     c3=c1+c2;
     c3.display();
+}
+
+```
+##### Inheritance #####
+
+1. It is a process of acquiring features of an existing class into a new class
+2. It is used for achieving reusability
+3. features of base class will be available in derived class
+
+```cpp
+#include <iostream>
+using namespace std;
+class Base {
+    public:
+    int a;
+    void display() {
+    cout<<"Display of Base "<<a<<endl;
+    }
+};
+class Derived:public Base {
+    public:
+    void show() {
+    cout<<"Show of Derived"<<endl;
+    }
+};
+int main() {
+    Derived d;
+    d.a=100;
+    d.display();
+    d.show();
+}
+```
+##### Constructors in inheritance #####
+
+1. Constructors of base class is executed first then the constructor of derived class is executed.
+2. By default, non-parameterised constructor of base class is executed.
+3. parameterised constructor of base class must be called from derived class constructor
+
+```cpp
+#include <iostream>
+using namespace std;
+class Base {
+    public:
+    Base(){cout<<"Non-param Base"<<endl;}
+    Base(int x){cout<<"Param of Base "<<x<<endl;}
+};
+class Derived:public Base {
+    public:
+    Derived(){cout<<"Non-Param Derived"<<endl;}
+    Derived(int y){cout<<"Param of Derived "<<y<<endl;}
+    Derived(int x,int y):Base(x) {
+    cout<<"Param of Derived "<<y<<endl;
+}
+};
+int main() {
+    Derived d(5,10);  // Param of Base 5 & "Param of Derived 10
 }
 
 ```
