@@ -910,15 +910,23 @@ class Derived:public Base {
 int main() {
     Derived d(5,10);  // Param of Base 5 & "Param of Derived 10
 }
-
 ```
+
+##### Types of Inheritance #####
+
+1. Single Inheritance
+2. Multiple Inheritance
+3. Hierarchical Inheritance
+4. Multilevel Inheritance
+5. Hybrid Inheritance (also known as Virtual Inheritance)
+
 ##### Access Specifiers #####
 
 • Private - Accessible only inside a class
 • Protected - Accessible inside a class and inside derived classes
 • Public - accessible inside class, inside derived class and upon object
 
-                    | Private        | Protected      |  Public    |
+     Type           | Private        | Protected      |  Public    |
 --------------------|----------------| ---------------|------------|
 Inside Class        | accessible     | accessible     | accessible |
 Inside derived class| not accessible | accessible     | accessible |
