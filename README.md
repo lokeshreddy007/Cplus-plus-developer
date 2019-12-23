@@ -782,3 +782,77 @@ int main() {
     cout<<"Grade of Student:"<<s.grade()<<endl;
 }
 ```
+
+##### Operator Overloading #####
+
+1. Operators can be overloaded on our classes
+2. We can define operator for our own classes
+3. Operators can be overloaded using member functions or friend functions
+4. Global functions can also access private and protected members of an object if they are declared as friend inside a class
+
+###### Example ######
+
+```cpp
+class Complex {
+    private:
+    int real;
+    int img;
+    public:
+    Complex(int r=0,int i=0) {
+    real=r;
+    img=i;
+    }
+
+    void display() {
+    cout<<real<<“+i”<<img<<endl;
+    }
+
+    Complex operator+(Complex c) {
+    Complex temp;
+    temp.real=real+c1.real;
+    temp.img=img+c1.img;
+    return temp;
+    }
+};
+int main() {
+    Complex c1(5,3),c2(10,5),c3;
+    c3=c1+c2;
+    c3.display();
+}
+
+```
+
+##### Operator Overloading using Friend Functions #####
+```cpp
+#include <iostream>
+using namespace std;
+class Complex {
+    private:
+    int real;
+    int img;
+    public:
+    Complex(int r=0,int i=0) {
+    real=r;
+    img=i;
+    }
+
+    void display() {
+    cout<<real<<“+i”<<img<<endl;
+    }
+
+    friend Complex operator+(Complex c1,Complex c2);
+};
+Complex operator+(Complex c1,Complex c2) {
+    Complex temp;
+    temp.real=c1.real+c2.real;
+    temp.img=c1.img+c2.img;
+    return temp;
+}
+
+int main() {
+    Complex c1(5,3),c2(10,5),c3;
+    c3=c1+c2;
+    c3.display();
+}
+
+```
