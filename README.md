@@ -938,3 +938,30 @@ On object            | not accessible | not accessible | accessible |
 2. But only those functions which are in base class, can be called
 3. If derived class is having overrides functions they will not be called unless base class functions are declared as virtual
 4. Derived class pointer cannot point on base class object
+
+##### Function Overloading #####
+
+1. Redefining a function of base class in derived class
+2. Function overriding is used for achieving runtime polymorphism
+3. Prototype of a overrides function must be exactly same as base class function
+
+```cpp
+
+class Base {
+    public:
+    void fun() {
+    cout<<“fun of Base"<<endl;
+    }
+};
+class Derived: public Base {
+    public:
+    void fun() {
+    cout<<“fun of Derived"<<endl;
+    }
+};
+int main() {
+    Derived d;
+    d.fun( );
+}
+
+```
