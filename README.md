@@ -926,9 +926,9 @@ int main() {
 • Protected - Accessible inside a class and inside derived classes
 • Public - accessible inside class, inside derived class and upon object
 
-     Type           | Private        | Protected      |  Public    |
---------------------|----------------| ---------------|------------|
-Inside Class        | accessible     | accessible     | accessible |
-Inside derived class| not accessible | accessible     | accessible |
-On object           | not accessible | not accessible | accessible |
+Type                 | Private        | Protected      | Public    |
+---------------------|----------------| ---------------|------------|
+Inside Class         | accessible     | accessible     | accessible |
+Inside derived class | not accessible | accessible     | accessible |
+On object            | not accessible | not accessible | accessible |
 
