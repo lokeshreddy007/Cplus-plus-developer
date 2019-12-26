@@ -965,3 +965,24 @@ int main() {
 }
 
 ```
+##### Virtual Functions #####
+
+1. Virtual functions are used for achieving polymorphism
+2. Base class can have virtual functions
+3. Virtual functions can be overrides in derived class
+4. Pure virtual functions must be overrides by derived class
+
+```cpp
+class BasicCar {
+    public:
+    virtual void start(){cout<<"BasicCar started"<<endl;}
+};
+class AdvanceCar: public BasicCar {
+    public:
+    void start(){cout<<"AdvanceCar Started"<<endl;}
+};
+int main() {
+    BasicCar *p=new AdvanceCar();
+    p->start();
+}
+```
