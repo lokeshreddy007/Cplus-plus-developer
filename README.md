@@ -932,3 +932,9 @@ Inside Class         | accessible     | accessible     | accessible |
 Inside derived class | not accessible | accessible     | accessible |
 On object            | not accessible | not accessible | accessible |
 
+##### Base class Pointer pointing to derived class object #####
+
+1. Base class pointer can point on derived class object
+2. But only those functions which are in base class, can be called
+3. If derived class is having overrides functions they will not be called unless base class functions are declared as virtual
+4. Derived class pointer cannot point on base class object
