@@ -986,3 +986,35 @@ int main() {
     p->start();
 }
 ```
+
+##### Polymorphism #####
+
+1. Same name different actions
+2. Runtime Polymorphism is achieved using function overriding
+3. Virtual functions are abstract functions of base class
+4. Derived class must override virtual function
+5. Base class pointer pointing to derived class object and a override function is called
+Summary: class car is defined, then sub classes override, then base class method made as virtual the pure virtual
+
+```cpp
+
+class Car {
+    public:
+    virtual void start()=0;
+};
+class Innova:public Car {
+    public:
+    void start(){cout<<"Innova Started"<<endl;}
+};
+class Swift:public Car {
+    public:
+    void start(){cout<<"Swift Started"<<endl;}
+};
+int main() {
+    //Car c;
+    Car *p=new Innova();  // created at heap
+    p->start();
+    p=new Swift();
+    p->start();
+}
+```
