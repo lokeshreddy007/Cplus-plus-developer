@@ -1106,3 +1106,34 @@ int main() {
     cout<<t1.getCount()<<endl;
 }
 ```
+##### Exception handling #####
+
+1. Exceptions are Runtime errors
+2. Try and catch blacks are used for handling exceptions
+3. If exceptions are not handled then program may crash
+4. Exceptions must give a message to the user, giving correct reason on cause of exception
+5. A try block can have Multiple catch blocks
+6. Catch-All can catch all exception
+7. Catch-All must be a last block
+8. If classes in inheritance are used in catch block then child class should come first
+
+```cpp
+#include <iostream>
+using namespace std;
+int division(int a,int b)throw(int) {
+    if(b==0)
+        throw 1;
+    return a/b;
+}
+int main() {
+    int x=10,y=2,z;
+    try {
+        z=division(x,y);
+        cout<<z<<endl;
+    }catch(int e) {
+        cout<<"Division by zero "<<e<<endl;
+    }
+    cout<<"Bye"<<endl;
+}
+
+```
