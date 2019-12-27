@@ -1137,3 +1137,28 @@ int main() {
 }
 
 ```
+##### PreProcessor Directives #####
+
+1. They are instructions to compiler
+2. They are processed before compilation
+3. They are used for defining symbolic constant
+4. They are used for defining functions
+5. They also support conditional definition
+
+```cpp
+
+#include <iostream>
+using namespace std;
+#define max(x,y) (x>y?x:y)
+#define msg(x) #x
+#ifndef PI
+#define PI 3.1425
+#endif
+int main()
+{
+    cout<<PI;
+    cout<<max(10,12)<<endl;
+    cout<<msg(hello)<<endl;
+}
+
+```
