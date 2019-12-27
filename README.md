@@ -1049,3 +1049,32 @@ int main() {
     d.fun2();
 }
 ```
+##### Friend functions and classes #####
+
+1. Friend functions are global functions
+2. They can access member of a class upon their objects
+3. A class can be declared as friend on another class
+4. All the functions of friend class can access private and protected members of other class 
+
+```cpp
+class Your;
+class My {
+    private:int a;
+    protected: int b;
+    public: int c;
+    friend Your;
+};
+class Your {
+    public:
+    My m;
+    void fun() {
+    m.a=10;
+    m.b=10;
+    m.c=10;
+    }
+};
+int main() {
+
+}
+```
+
