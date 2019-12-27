@@ -1018,3 +1018,34 @@ int main() {
     p->start();
 }
 ```
+##### Abstract class #####
+
+1. Class having pure virtual function is a abstract class
+2. Object of abstract class cannot be created
+3. Derived class can must override pure virtual function, otherwise it will also become a abstract class.
+4. Pointer of abstract class can be created
+5. Pointer of abstract class can hold object of derived class
+6. Abstract classes are used for achieving polymorphism
+
+```cpp
+using namespace std;
+class Base {
+    public:
+    virtual void fun1()=0;
+    virtual void fun2()=0;
+};
+class Derived :public Base {
+    public:
+    void fun1() {
+    cout<<"fun1 of Derived"<<endl;
+    }
+    void fun2() {
+    cout<<"fun2 of Derived"<<endl;
+    }
+};
+int main() {
+    Derived d;
+    d.fun1();
+    d.fun2();
+}
+```
