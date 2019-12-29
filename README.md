@@ -1162,3 +1162,44 @@ int main()
 }
 
 ```
+##### I/O Streams #####
+
+1. I/O Streams are used for input and output data to and from the program
+2. C++ provides class for accessing input output operations
+3. Iostream is a base class for all classes
+4. Istream is for input
+5. Cin is the object of istream
+6. ostream is for output
+7. Cout is an object of ostream
+8. ifstream is a file input stream
+9. ofstream is a file output stream
+
+###### Writing in a File ######
+
+```cpp
+
+int main() {
+    ofstream of("Test.txt",ios::trunc);
+    of<<"John"<<endl;
+    of<<25<<endl;
+    of<<"CS"<<endl;
+    of.close();
+}
+
+```
+
+###### Reading from File ######
+
+```cpp
+
+int main() {
+    ifstream ifs("Test.txt");
+    string name;
+    int roll;
+    string branch;
+    ifs>>name>>roll>>branch;
+    cout<<name<<endl<<roll<<endl<<branch<<endl;
+    ifs.close();
+}
+
+```
