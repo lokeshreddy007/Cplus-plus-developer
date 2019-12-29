@@ -1213,3 +1213,5 @@ STL has four components:
 2. Containers
 3. Functions
 4. Iterators
+
+For more information refer [cplusplus](http://www.cplusplus.com/)
