@@ -18,7 +18,6 @@
 #include<iostream>
 
 int main() {
-
     return 0;
 }
 ```
@@ -30,7 +29,6 @@ int main() {
 using namespace std;
 
 int main() {
-
     string str;
     cout<<"May i know your Name?";
     cin>>str;
