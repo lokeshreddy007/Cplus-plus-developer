@@ -1,4 +1,4 @@
-# C++ developer Guide
+# C++ Quick Reference
 
  ### Prerequisite ###
  1. How Computer works
@@ -47,7 +47,6 @@ Here to get input from user we used `cin` instead that we can use `getline`. The
 using namespace std;
 
 int main() {
-
     string str;
     cout<<"May i know your Name?";
     getline(cin,str);
@@ -66,7 +65,7 @@ Boolean   | Unoin        | Reference |
 Float     | class        |           |
 Double    |              |           |
 
-##### need add a pic explaning size and Range alest for one data type #####
+##### need to add a pic explaning size and Range at least for one data type #####
 
 #### Operators and Expressions ####
 
@@ -104,7 +103,6 @@ example
 using namespace std;
 
 int main() {
-
     int a,b,c;
     cout<<"Enter 3 no's";
     cin>>a>>b>>c;
@@ -128,7 +126,6 @@ int main() {
 using namespace std;
 
 int main() {
-
     int day;
     cout<<"Enter day number";
     cin>>day
@@ -159,7 +156,6 @@ int main() {
 using namespace std;
 
 int main() {
-
     int a,b,c;
     cout<<"Enter 3 no's ";
     cin>>a>>b>>c;
@@ -170,8 +166,7 @@ int main() {
 }
 
 ```
-In the above exmaple if we used `&&` - `AND` operator where both the condtions sholud be true to enter inside the for loop, but here while checking this condtion there is possibility of Short circuit i.e while execting this condition `a>b && a>c` the program first check the first condtion i.e `a>b` here if we get false then the program will not execute the next condtion i.e `a>c` it automatically skip...   
-
+In the above exmaple, we used `&&` - `AND` operator where both the condtions sholud be true to enter inside the for loop, but here while checking this condtion there is possibility of Short circuit i.e while execting this condition `a>b && a>c` the program first check the first condtion i.e `a>b` here if we get false then the program will not execute the next condtion i.e `a>c` it automatically skip...   
 
 #### Example of Dynamic Declartion ####
 
@@ -181,7 +176,6 @@ In the above exmaple if we used `&&` - `AND` operator where both the condtions s
 using namespace std;
 
 int main() {
-
     int a =10, b=5;
 
     if(int c =a+b;c>10) {
@@ -202,7 +196,6 @@ Here the variable `c` is declared in if condition,where it's scope is within if 
 using namespace std;
 
 int main() {
-
     Switch(expression) {
         case 1: ______
                 breark;
@@ -229,7 +222,6 @@ In C++ we have `while loop`, `for loop`, `do while loop`, `nested loop`
 using namespace std;
 
 int main() {
-
    int a = 10;
    while( a < 20 ) {
       cout << "value of a: " << a << endl;
@@ -247,7 +239,6 @@ int main() {
 using namespace std;
 
 int main() {
-
    for( int a = 10; a < 20; a = a + 1 ) {
       cout << "value of a is : " << a <<endl;
    }
@@ -262,7 +253,6 @@ int main() {
 using namespace std;
 
 int main() {
-
     int a[5] = {1,2,3,4,5}
    for( auto c: a) {
       cout << "value of a is: " << c <<endl;
@@ -280,7 +270,6 @@ int main() {
 using namespace std;
 
 int main() {
-
   int a = 10;
    do {
       cout << "value of a: " << a << endl;
@@ -299,7 +288,6 @@ int main() {
 using namespace std;
 
 int main() {
-
    int i, j;
    for(i = 2; i<100; i++) {
       for(j = 2; j <= (i/j); j++)
@@ -337,7 +325,6 @@ Accordingly, search is done to either half of the given list `complexity is  O(l
 using namespace std;
 
 int main() {
-
    int a[5] = {6,7,23,45,23};
    int key;
    cout<< "Enter the Key Search";
@@ -362,7 +349,6 @@ int main() {
 using namespace std;
 
 int main() {
-
    int a[5] = {6,7,23,45,23};
    int l=0,h=4,key,mid;
    cout<< "Enter the Key Search";
@@ -470,7 +456,6 @@ void display() { // function
     cout<<"Hello";
 }
 int main() {
-
     void (*fp)();  // declaration
     fp=display;    // initializiton
     (*fp)();       // calling function
@@ -480,7 +465,11 @@ int main() {
 ```
 
 #### Functions ####
+A function is a set of statements that take inputs, do some specific computation and produces output.
+The idea is to put some commonly or repeatedly done task together and make a function so that instead of writing the same
+code again and again for different inputs, we can call the function
 
+#### Functions Overloading ####
 Function Overloading  means were we can write more than one function with same name but a different argument list
 
 ##### Function Overloading Example #####
