@@ -910,7 +910,9 @@ int main() {
 ##### Access Specifiers #####
 
 • Private - Accessible only inside a class
+
 • Protected - Accessible inside a class and inside derived classes
+
 • Public - accessible inside class, inside derived class and upon object
 
 Type                 | Private        | Protected      | Public    |
